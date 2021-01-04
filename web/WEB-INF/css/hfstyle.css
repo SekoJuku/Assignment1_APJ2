@@ -1,0 +1,16 @@
+.flex {
+    display : flex;
+    flex-flow: row nowrap;
+}
+.footer {
+    display : flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+}
+.flex-start {
+    justify-content: start;
+}
+.flex-end {
+    justify-content: end;
+}
