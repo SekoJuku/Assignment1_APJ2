@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 @WebServlet(name = "Servlet",urlPatterns = "/Servlet")
 public class Servlet extends HttpServlet {
@@ -19,12 +22,13 @@ public class Servlet extends HttpServlet {
             int corecount = Runtime.getRuntime().availableProcessors();
             System.out.println(corecount);
             String dir = "C:\\Users\\troy9\\IdeaProjects\\Assignment1_APJ2\\src\\directory\\";
+            Path path = Paths.get(dir);
             File directory = new File(dir);
             File[] files = directory.listFiles();
             Thread[] threads = new Thread[corecount];
 
             for (int i = 0, k = 0; i < files.length;i++,k=(k+1)%corecount) {
-                threads[k] = new Thread_1(files[i]);
+                threads[k] = new Thread_1(files[i], item, dir);
                 threads[k].start();
             }
         }

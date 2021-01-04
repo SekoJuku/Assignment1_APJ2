@@ -11,7 +11,7 @@
   <%@include file="components/header.jsp"%>
   <div class="container">
       <form action="Servlet" method="post">
-          <input id="searchtext" type="text">
+          <input name="searchtext" type="text">
           <input type="submit">
       </form>
   </div>

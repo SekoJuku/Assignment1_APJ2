@@ -18,7 +18,7 @@ public class RestClient {
     // The Java method will produce content identified by the MIME Media type "text/plain"
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{param}")
-    public Response getResult() {
+    public void getResult() {
         // Return some cliched textual content
         List<String> result;
 
